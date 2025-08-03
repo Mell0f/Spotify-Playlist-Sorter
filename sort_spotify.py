@@ -22,7 +22,13 @@ def get_all_playlist_tracks_with_details(sp, playlist_id):
     de dicionários, um para cada música, contendo apenas o que precisamos para ordenar.
     """
     print(f"Buscando músicas...")
-    playlist_items = sp.all_items(sp.playlist_items(playlist_id))
+    playlist_items = []
+    results = sp.playlist_items(playlist_id)
+    playlist_items.extend(results['items'])
+    
+    while results['next']:
+        results = sp.next(results)
+        playlist_items.extend(results['items'])
 
     tracks_details = []
     for item in playlist_items:
@@ -123,7 +129,7 @@ def main():
         for i, p in enumerate(all_playlists):
             print(f"  {i+1} - {p['name']}")
         
-        chosen_playlists_map = {} # Usaremos um dicionário para evitar repitidos
+        chosen_playlists_map = {} # Usaremos um dicionário para evitar repetidos
         while True:
             choice = input(f"\nEscolha uma playlist para adicionar à lista (ou pressione Enter para finalizar): ")
             if not choice:
