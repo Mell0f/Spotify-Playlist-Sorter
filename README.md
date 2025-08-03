@@ -1,7 +1,7 @@
 # 🎵 Spotify Playlist Sorter
 Uma ferramenta de linha de comando construída em Python para organizar playlists do Spotify com filtros avançados e personalizáveis que não existem no aplicativo oficial.
 
-![Demo do Projeto](assets\DemostraçãoProjeto.gif)
+![Demo do Projeto](assets\DemostracaoProjeto.gif)
 
 
 ## 🎯 Sobre o Projeto
