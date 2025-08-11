@@ -3,9 +3,9 @@ from spotipy.oauth2 import SpotifyOAuth
 import os
 from dotenv import load_dotenv
 
+# Aqui carregamos as credencias do arquivo .env
+# Você também pode configurar as suas crendencias direto no codigo
 load_dotenv()
-
-# --- Bloco de Funções com Responsabilidade Única ---
 
 def get_spotify_client():
     """Autentica o usuário e retorna um cliente Spotipy conectado."""
